@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShotCrude.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87caa19696db5f9ee49b4eb4ff14f4b79c9ea5a3")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShotCrude.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShotCrude.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
