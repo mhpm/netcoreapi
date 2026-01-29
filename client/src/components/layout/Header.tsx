@@ -1,6 +1,7 @@
 import { Coffee, ShoppingCart } from "lucide-react";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../store";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -8,27 +9,27 @@ export const Header = () => {
   return (
     <nav className="bg-coffee-900/95 backdrop-blur-md text-white p-4 sticky top-0 z-50 shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
-        <div className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <div className="bg-coffee-600 p-1.5 rounded-lg">
             <Coffee className="w-6 h-6 text-white" />
           </div>
           <span className="text-xl md:text-2xl font-bold tracking-tight">
             Caffeine Crafter
           </span>
-        </div>
+        </Link>
         <div className="flex items-center gap-6">
           <div className="hidden md:flex gap-6 text-sm font-medium text-coffee-100">
-            <a href="#" className="hover:text-white transition-colors">
+            <Link to="/" className="hover:text-white transition-colors">
               Inicio
-            </a>
-            <a href="#menu" className="hover:text-white transition-colors">
+            </Link>
+            <a href="/#menu" className="hover:text-white transition-colors">
               Menú
             </a>
-            <a href="#nosotros" className="hover:text-white transition-colors">
+            <a href="/#nosotros" className="hover:text-white transition-colors">
               Nosotros
             </a>
           </div>
-          <div className="relative group cursor-pointer">
+          <Link to="/cart" className="relative group cursor-pointer">
             <div className="p-2 hover:bg-white/10 rounded-full transition-colors">
               <ShoppingCart className="w-6 h-6" />
               {cartItems.length > 0 && (
@@ -37,7 +38,7 @@ export const Header = () => {
                 </span>
               )}
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </nav>
