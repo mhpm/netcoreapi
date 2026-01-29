@@ -11,11 +11,11 @@ RUN npm run build
 # Stage 2: Build Backend
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build-backend
 WORKDIR /src
-COPY ["ShotCrude.Api/ShotCrude.Api.csproj", "ShotCrude.Api/"]
-RUN dotnet restore "ShotCrude.Api/ShotCrude.Api.csproj"
+COPY ["CaffeineCrafter.Api/CaffeineCrafter.Api.csproj", "CaffeineCrafter.Api/"]
+RUN dotnet restore "CaffeineCrafter.Api/CaffeineCrafter.Api.csproj"
 COPY . .
-WORKDIR "/src/ShotCrude.Api"
-RUN dotnet publish "ShotCrude.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
+WORKDIR "/src/CaffeineCrafter.Api"
+RUN dotnet publish "CaffeineCrafter.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 # Stage 3: Final Runtime
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
@@ -31,4 +31,4 @@ COPY --from=build-frontend /app/client/dist ./wwwroot
 EXPOSE 8080
 ENV ASPNETCORE_URLS=http://+:8080
 
-ENTRYPOINT ["dotnet", "ShotCrude.Api.dll"]
+ENTRYPOINT ["dotnet", "CaffeineCrafter.Api.dll"]
