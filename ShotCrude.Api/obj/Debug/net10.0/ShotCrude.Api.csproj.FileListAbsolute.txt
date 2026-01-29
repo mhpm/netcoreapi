@@ -35,3 +35,4 @@ C:\Users\mperezmorales\Documents\code\web\dotnet\shot_crude\ShotCrude.Api\obj\De
 C:\Users\mperezmorales\Documents\code\web\dotnet\shot_crude\ShotCrude.Api\obj\Debug\net10.0\ShotCrude.Api.genruntimeconfig.cache
 C:\Users\mperezmorales\Documents\code\web\dotnet\shot_crude\ShotCrude.Api\obj\Debug\net10.0\ref\ShotCrude.Api.dll
 C:\Users\mperezmorales\Documents\code\web\dotnet\shot_crude\ShotCrude.Api\bin\Debug\net10.0\Scalar.AspNetCore.dll
+C:\Users\mperezmorales\Documents\code\web\dotnet\shot_crude\ShotCrude.Api\obj\Debug\net10.0\ShotCrude.Api.sourcelink.json

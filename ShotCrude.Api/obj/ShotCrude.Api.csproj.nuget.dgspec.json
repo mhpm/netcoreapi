@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\mperezmorales\\Documents\\code\\web\\dotnet\\shot_crude\\ShotCrude.Api\\ShotCrude.Api.csproj": {}
+    "C:\\Users\\mperezmorales\\Documents\\code\\web\\dotnet\\shot_crude\\ShotCrude.Api\\ShotCrude.Api.csproj": {}
   },
   "projects": {
-    "c:\\Users\\mperezmorales\\Documents\\code\\web\\dotnet\\shot_crude\\ShotCrude.Api\\ShotCrude.Api.csproj": {
+    "C:\\Users\\mperezmorales\\Documents\\code\\web\\dotnet\\shot_crude\\ShotCrude.Api\\ShotCrude.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\mperezmorales\\Documents\\code\\web\\dotnet\\shot_crude\\ShotCrude.Api\\ShotCrude.Api.csproj",
+        "projectUniqueName": "C:\\Users\\mperezmorales\\Documents\\code\\web\\dotnet\\shot_crude\\ShotCrude.Api\\ShotCrude.Api.csproj",
         "projectName": "ShotCrude.Api",
-        "projectPath": "c:\\Users\\mperezmorales\\Documents\\code\\web\\dotnet\\shot_crude\\ShotCrude.Api\\ShotCrude.Api.csproj",
+        "projectPath": "C:\\Users\\mperezmorales\\Documents\\code\\web\\dotnet\\shot_crude\\ShotCrude.Api\\ShotCrude.Api.csproj",
         "packagesPath": "C:\\Users\\mperezmorales\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\mperezmorales\\Documents\\code\\web\\dotnet\\shot_crude\\ShotCrude.Api\\obj\\",
+        "outputPath": "C:\\Users\\mperezmorales\\Documents\\code\\web\\dotnet\\shot_crude\\ShotCrude.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
