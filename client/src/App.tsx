@@ -7,17 +7,19 @@ import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
 import { Home } from "./pages/Home";
 import { Cart } from "./pages/Cart";
+import { Order } from "./pages/Order";
 
 function App() {
   return (
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
-          <div className="min-h-screen bg-coffee-50 text-coffee-900 font-sans">
+          <div className="min-h-screen bg-coffee-900 text-coffee-50 font-sans">
             <Header />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/order" element={<Order />} />
             </Routes>
             <Footer />
           </div>

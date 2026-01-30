@@ -10,36 +10,36 @@ export const Cart = () => {
   const total = cartItems.reduce((sum, item) => sum + item.price, 0);
 
   return (
-    <div className="min-h-screen bg-coffee-50 pt-24 pb-12 px-6">
+    <div className="min-h-screen bg-coffee-900 pt-32 pb-12 px-6">
       <div className="max-w-4xl mx-auto space-y-8">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-coffee-600 hover:text-coffee-900 transition-colors font-medium"
+          className="inline-flex items-center gap-2 text-coffee-300 hover:text-white transition-colors font-medium"
         >
           <ArrowLeft className="w-5 h-5" />
           Volver al Menú
         </Link>
 
-        <h1 className="text-4xl md:text-5xl font-black text-coffee-900">
+        <h1 className="text-4xl md:text-5xl font-bold text-white">
           Tu Carrito
         </h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="space-y-6">
-            <h2 className="text-xl font-bold text-coffee-700">
+            <h2 className="text-xl font-bold text-coffee-200">
               Resumen del Pedido
             </h2>
             <CartList items={cartItems} />
           </div>
 
           <div className="space-y-6">
-            <h2 className="text-xl font-bold text-coffee-700">
+            <h2 className="text-xl font-bold text-coffee-200">
               Finalizar Compra
             </h2>
             {cartItems.length > 0 ? (
               <StripeCheckout total={total} />
             ) : (
-              <div className="bg-white p-8 rounded-3xl border border-coffee-100 text-center text-coffee-400">
+              <div className="bg-coffee-800 p-8 rounded-[2rem] border border-white/5 text-center text-coffee-400">
                 Agrega productos para proceder al pago
               </div>
             )}

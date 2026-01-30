@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-coffee-50: #fdf8f6;
-  --color-coffee-100: #f2e8e5;
-  --color-coffee-200: #eaddd7;
-  --color-coffee-300: #e0cec7;
-  --color-coffee-400: #d2bab0;
-  --color-coffee-500: #bfa094;
-  --color-coffee-600: #a18072;
-  --color-coffee-700: #977669;
-  --color-coffee-800: #846358;
-  --color-coffee-900: #43302b;
+  /* Using CSS variables for easier updates */
+  --color-coffee-50: var(--color-coffee-50);
+  --color-coffee-100: var(--color-coffee-100);
+  --color-coffee-200: var(--color-coffee-200);
+  --color-coffee-300: var(--color-coffee-300);
+  --color-coffee-400: var(--color-coffee-400);
+  --color-coffee-500: var(--color-coffee-500);
+  --color-coffee-600: var(--color-coffee-600);
+  --color-coffee-700: var(--color-coffee-700);
+  --color-coffee-800: var(--color-coffee-800);
+  --color-coffee-900: var(--color-coffee-900);
 
   @keyframes fade-in {
     from { opacity: 0; }
@@ -21,6 +22,16 @@
     from { transform: scale(0.95); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
   }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
 }
 
 .animate-in {
@@ -37,13 +48,46 @@
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* New Professional Palette Variables */
+  /* Core Brand Colors */
+  --color-brand-dark: #1A0F0E;    /* Deeper, more elegant coffee black */
+  --color-brand-maroon: #8B1A10;  /* Rich Mahogany Red */
+  --color-brand-red: #D32F2F;     /* Vivid Crimson */
+  --color-brand-orange: #F59E0B;  /* Golden Amber (More luxurious than standard orange) */
+  --color-brand-gold: #D4AF37;    /* Metallic Gold Accent */
+
+  /* Generated Coffee Scale - Modern Dark App */
+  /* 900: Main Background (Deepest Black/Coffee) */
+  --color-coffee-900: #0C0A09; 
+  /* 800: Card Surface (Dark Grey/Coffee) */
+  --color-coffee-800: #1C1917;
+  /* 700: Secondary Surface / Inputs */
+  --color-coffee-700: #292524;
+  /* 600: Borders / Dividers */
+  --color-coffee-600: #44403C;
+  
+  /* Brand Accents */
+  --color-brand-orange: #F59E0B; /* Golden Amber - much more premium */
+  --color-brand-red: #EF4444;
+
+  /* 50: Text Primary */
+  --color-coffee-50: #FAFAF9;
+  /* 100: Text Secondary */
+  --color-coffee-100: #D6D3D1;
+  /* 200: Text Muted */
+  --color-coffee-200: #A8A29E;
+
+  /* Fonts */
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  font-family: var(--font-sans);
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: dark;
+  color: var(--color-coffee-50);
+  background-color: var(--color-coffee-900);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -55,4 +99,37 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--color-coffee-900);
+  color: var(--color-coffee-50);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-coffee-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-coffee-800);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-coffee-700);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CaffeineCrafter.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb9718630c4e0e3033cd35081920b9aff0734957")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4990b4e47712423f5bbf3505cbd7e2ef964bec43")]
 [assembly: System.Reflection.AssemblyProductAttribute("CaffeineCrafter.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CaffeineCrafter.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

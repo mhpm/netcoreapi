@@ -1,0 +1,13 @@
+{
+  "name": "caffeine-crafter-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n \"API,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"dotnet run --project CaffeineCrafter.Api/CaffeineCrafter.Api.csproj\" \"npm run dev --prefix client\"",
+    "build": "dotnet build CaffeineCrafter.Api/CaffeineCrafter.Api.csproj && npm run build --prefix client",
+    "install:all": "npm install && npm install --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

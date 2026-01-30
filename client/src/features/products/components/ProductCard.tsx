@@ -1,4 +1,4 @@
-import { ShoppingCart } from "lucide-react";
+import { Plus } from "lucide-react";
 import type { Product } from "../../../types";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../cart/cartSlice";
@@ -12,37 +12,63 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    dispatch(addToCart(product));
+    dispatch(
+      addToCart({
+        ...product,
+        totalPrice: product.price,
+      }),
+    );
   };
 
+  const image = getCoffeeImage(product.name);
+  const description = getCoffeeDescription(product.name);
+
   return (
-    <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-coffee-100 group">
-      <div className="h-72 relative overflow-hidden">
-        <img
-          src={getCoffeeImage(product.name)}
-          alt={product.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-        />
-        <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-2xl text-coffee-900 font-black shadow-lg text-lg">
+    <div className="bg-coffee-800/40 backdrop-blur-sm rounded-[3rem] p-8 shadow-xl hover:shadow-2xl transition-all duration-500 group border border-white/5 flex flex-col items-center text-center">
+      {/* Circular Image with decorative ring */}
+      <div className="relative w-48 h-48 mb-8">
+        <div className="absolute inset-0 bg-brand-orange/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        <div className="absolute -inset-2 border border-white/5 rounded-full group-hover:border-brand-orange/20 transition-colors duration-500"></div>
+
+        <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-coffee-700 group-hover:border-brand-orange/30 transition-all duration-500 transform group-hover:scale-105 bg-coffee-900">
+          <img
+            src={image}
+            alt={product.name}
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src =
+                "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80";
+            }}
+          />
+        </div>
+
+        {/* Price Tag Floating */}
+        <div className="absolute -top-2 -right-2 bg-brand-orange text-white text-xs font-black px-4 py-2 rounded-full shadow-xl transform rotate-12 group-hover:rotate-0 transition-transform duration-500">
           ${product.price.toFixed(2)}
         </div>
       </div>
-      <div className="p-8 space-y-6">
+
+      <div className="space-y-4 flex-1 flex flex-col items-center">
         <div>
-          <h3 className="text-2xl font-black text-coffee-900 mb-2">
+          <h3 className="text-2xl font-serif font-bold text-white mb-2 group-hover:text-brand-orange transition-colors">
             {product.name}
           </h3>
-          <p className="text-coffee-600 text-sm leading-relaxed">
-            {getCoffeeDescription(product.name)}
+          <p className="text-coffee-300 text-sm leading-relaxed max-w-[200px]">
+            {description}
           </p>
         </div>
+
         <button
           onClick={handleAddToCart}
-          className="w-full bg-coffee-900 text-white py-4 rounded-2xl font-bold hover:bg-coffee-800 transition-all flex items-center justify-center gap-3 active:scale-95"
+          className="mt-auto group/btn relative px-8 py-3 bg-brand-orange text-white rounded-full text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 shadow-[0_10px_30px_rgba(245,158,11,0.2)] hover:shadow-[0_10px_30px_rgba(245,158,11,0.4)] overflow-hidden"
         >
-          <ShoppingCart className="w-5 h-5" />
-          Añadir al Carrito
+          <span className="relative z-10 flex items-center gap-2">
+            <Plus className="w-4 h-4 group-hover/btn:rotate-90 transition-transform duration-300" />
+            Add to Order
+          </span>
+          <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover/btn:animate-shimmer"></div>
+          <div className="absolute inset-0 bg-black/10 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
         </button>
       </div>
     </div>
