@@ -47,13 +47,15 @@ export const Header = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <Link to="/cart" className="relative group p-2">
-              <ShoppingCart className="w-5 h-5 text-coffee-100 group-hover:text-brand-orange transition-all duration-300" />
-              {itemCount > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-brand-orange text-white text-[10px] font-black rounded-full flex items-center justify-center ring-4 ring-coffee-900 shadow-xl scale-110">
-                  {itemCount}
-                </span>
-              )}
+            <Link to="/cart" className="p-2 group">
+              <div className="relative">
+                <ShoppingCart className="w-5 h-5 text-white group-hover:text-brand-orange transition-all duration-300" />
+                {itemCount > 0 && (
+                  <span className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-[#EF4444] text-[9px] font-bold text-white rounded-full flex items-center justify-center shadow-sm pointer-events-none">
+                    {itemCount}
+                  </span>
+                )}
+              </div>
             </Link>
             <button className="w-10 h-10 rounded-full border border-white/10 bg-white/5 text-coffee-200 flex items-center justify-center hover:bg-white/10 transition-colors">
               <User className="w-5 h-5" />

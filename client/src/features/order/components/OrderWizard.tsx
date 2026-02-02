@@ -147,13 +147,18 @@ export const OrderWizard = () => {
                     <img
                       src={
                         cat === "caliente"
-                          ? "https://images.unsplash.com/photo-1541167760496-162955ed8a9f?auto=format&fit=crop&w=800&q=80"
+                          ? "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80"
                           : cat === "frio"
                             ? "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80"
                             : "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=800&q=80"
                       }
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       alt={cat}
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src =
+                          "https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?auto=format&fit=crop&w=800&q=80";
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                     <div className="absolute bottom-6 left-6 text-left">
@@ -195,6 +200,11 @@ export const OrderWizard = () => {
                           src={drink.image}
                           className="w-16 h-16 rounded-xl object-cover"
                           alt={drink.name}
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src =
+                              "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80";
+                          }}
                         />
                         <div className="text-left flex-1">
                           <p className="font-bold">{drink.name}</p>
@@ -224,6 +234,11 @@ export const OrderWizard = () => {
                   src={selectedDrink.image}
                   className="w-24 h-24 rounded-[2rem] object-cover shadow-2xl"
                   alt={selectedDrink.name}
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src =
+                      "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80";
+                  }}
                 />
                 <div>
                   <h2 className="text-3xl font-bold text-white">

@@ -18,7 +18,7 @@ export const DRINK_MENU: DrinkOption[] = [
     category: "caliente",
     description: "Shot puro de energía concentrada.",
     image:
-      "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+      "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "h2",
@@ -27,7 +27,7 @@ export const DRINK_MENU: DrinkOption[] = [
     category: "caliente",
     description: "Espresso con leche vaporizada y espuma sedosa.",
     image:
-      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=800&q=80",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "h3",
@@ -45,7 +45,7 @@ export const DRINK_MENU: DrinkOption[] = [
     category: "caliente",
     description: "Doble espresso con una fina capa de leche cremada.",
     image:
-      "https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=800&q=80",
+      "https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "h5",
@@ -74,7 +74,7 @@ export const DRINK_MENU: DrinkOption[] = [
     category: "frio",
     description: "Espresso agitado con leche fría y hielo.",
     image:
-      "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1553909489-ec2175ef3f52?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "c3",
@@ -103,7 +103,7 @@ export const DRINK_MENU: DrinkOption[] = [
     category: "frappe",
     description: "Batido helado de café con chocolate suizo.",
     image:
-      "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=800&q=80",
+      "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "f2",
@@ -112,7 +112,7 @@ export const DRINK_MENU: DrinkOption[] = [
     category: "frappe",
     description: "Deliciosa mezcla de galletas, café y crema.",
     image:
-      "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "f3",
@@ -121,7 +121,7 @@ export const DRINK_MENU: DrinkOption[] = [
     category: "frappe",
     description: "Frappé de caramelo con trozos de toffee crujiente.",
     image:
-      "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&q=80",
+      "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80",
   },
 
   // Tes
@@ -141,7 +141,7 @@ export const DRINK_MENU: DrinkOption[] = [
     category: "te",
     description: "Mezcla especiada de té negro con leche cremosa.",
     image:
-      "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&q=80",
+      "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "t3",
@@ -150,17 +150,17 @@ export const DRINK_MENU: DrinkOption[] = [
     category: "te",
     description: "Bebida ancestral de cúrcuma, jengibre y especias.",
     image:
-      "https://images.unsplash.com/photo-1610632380989-680fe40816c6?w=800&q=80",
+      "https://images.unsplash.com/photo-1610632380989-680fe40816c6?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: "t5",
+    id: "t4",
     name: "Iced Hibiscus Tea",
     price: 4.0,
     category: "te",
     description:
       "Infusión refrescante de flor de jamaica con un toque de limón.",
     image:
-      "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&q=80",
+      "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
