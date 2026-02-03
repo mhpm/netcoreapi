@@ -1,0 +1,162 @@
+{
+  "nav": {
+    "menu": "Menu",
+    "craft": "Craft",
+    "story": "Story"
+  },
+  "hero": {
+    "badge": "Premium Coffee Experience",
+    "title_part1": "Savor the",
+    "title_italic": "Luxury",
+    "title_part2": "of Coffee.",
+    "subtitle": "Experience the perfect blend of tradition and innovation. Crafted by masters, delivered to your soul.",
+    "order_now": "Order Now",
+    "explore_menu": "Explore Menu",
+    "rating": "Rating",
+    "coffee_lovers": "Coffee Lovers",
+    "authentic": "Authentic",
+    "handcrafted": "Handcrafted",
+    "categories": {
+      "all": "All Coffee",
+      "pastries": "Pastries",
+      "specials": "Specials",
+      "merchandise": "Merchandise",
+      "gifts": "Gifts"
+    }
+  },
+  "features": {
+    "badge": "Curated Collection",
+    "title": "Our Signature Menu",
+    "subtitle": "Explore our hand-picked selection of premium coffees, each roasted to perfection and prepared with artisanal precision.",
+    "items": {
+      "quality": {
+        "title": "Premium Quality",
+        "desc": "Hand-picked single origin beans from volcanic soils."
+      },
+      "roast": {
+        "title": "Artisanal Roast",
+        "desc": "Small-batch roasting for peak flavor profile."
+      },
+      "trade": {
+        "title": "Direct Trade",
+        "desc": "Supporting farmers with ethical sourcing."
+      }
+    },
+    "learn_more": "Learn More"
+  },
+  "about": {
+    "badge": "Our Philosophy",
+    "title_part1": "Crafting",
+    "title_italic": "Masterpieces",
+    "title_part2": "In Every Cup.",
+    "desc": "At Caffeine Crafter, we believe coffee is more than a beverage—it's an artisanal experience. We source only the rarest beans, roasted with surgical precision to unlock a symphony of flavors.",
+    "heritage_badge": "Heritage",
+    "heritage_text": "Founded on a passion for perfection since 1994.",
+    "stats": {
+      "ethical": "Ethically Sourced",
+      "roast": "Roast-to-Cup"
+    },
+    "full_story": "Our Full Story"
+  },
+  "products": {
+    "add_to_order": "Add to Order",
+    "loading": "Preparing your coffee experience...",
+    "error": "Failed to load products. Please try again.",
+    "names": {
+      "Espresso Intenso": "Intense Espresso",
+      "Cappuccino Cremoso": "Creamy Cappuccino",
+      "Latte Macchiato": "Latte Macchiato",
+      "Café Americano": "Americano Coffee",
+      "Mocha Especial": "Special Mocha"
+    },
+    "descriptions": {
+      "Espresso Intenso": "Small in size, big in energy. A pure shot of adrenaline with golden crema.",
+      "Cappuccino Cremoso": "The perfect balance between espresso, steamed milk and an irresistible foam.",
+      "Latte Macchiato": "Layered smoothness. Velvety milk stained with our best espresso.",
+      "Café Americano": "Classic and comforting. Our espresso diluted to enjoy sip by sip.",
+      "Mocha Especial": "For sweet lovers. A perfect blend of espresso, chocolate and milk.",
+      "default": "A balanced blend with notes of chocolate and nuts."
+    }
+  },
+  "footer": {
+    "made_with_love": "Artisanally made for you."
+  },
+  "cart": {
+    "empty": "Your cart is empty. It's time to fill it with energy!",
+    "remove": "Remove",
+    "back_to_menu": "Back to Menu",
+    "title": "Your Cart",
+    "order_summary": "Order Summary",
+    "checkout": "Checkout",
+    "add_items_to_checkout": "Add products to proceed to payment"
+  },
+  "order": {
+    "steps": {
+      "1": "Choose your Drink",
+      "2": "Customize",
+      "3": "Summary"
+    },
+    "categories": {
+      "caliente": "Hot",
+      "frio": "Cold",
+      "frappe": "Frappe",
+      "te": "Tea"
+    },
+    "title": "What do you feel like today?",
+    "subtitle": "Select a category to start",
+    "drink_list_title": "{{category}} Drinks",
+    "customize_title": "Customize your {{name}}",
+    "milk_selection": "Milk Type",
+    "extra_selection": "Extras (Optional)",
+    "summary_title": "Almost ready!",
+    "summary_subtitle": "Review your custom creation",
+    "summary_drink": "Drink",
+    "summary_milk": "Milk",
+    "summary_extras": "Extras",
+    "summary_total": "Total",
+    "next": "Next",
+    "back": "Back",
+    "finish": "Finish Order",
+    "add_to_cart": "Add to Cart",
+    "checkout_now": "Checkout Now",
+    "add_and_continue": "Add & Continue Shopping",
+    "milk": {
+      "entera": "Whole Milk",
+      "deslactosada": "Lactose Free",
+      "almendra": "Almond Milk",
+      "avena": "Oat Milk"
+    },
+    "extras": {
+      "shot": "Extra Espresso Shot",
+      "crema": "Whipped Cream",
+      "vainilla": "Vanilla Syrup",
+      "caramelo": "Caramel Sauce"
+    }
+  },
+  "payment": {
+    "success": {
+      "title": "Payment Successful!",
+      "subtitle": "Your coffee is being prepared with love.",
+      "details": "We'll send you an email with the details.",
+      "back_to_home": "Back to Home"
+    }
+  },
+  "menu": {
+    "h1": { "name": "Intense Espresso", "desc": "Pure shot of concentrated energy." },
+    "h2": { "name": "Artisanal Cappuccino", "desc": "Espresso with steamed milk and silky foam." },
+    "h3": { "name": "Vanilla Latte", "desc": "Smooth espresso with milk and a touch of natural vanilla." },
+    "h4": { "name": "Flat White", "desc": "Double espresso with a thin layer of creamed milk." },
+    "h5": { "name": "White Mocha", "desc": "Espresso with white chocolate and steamed milk." },
+    "c1": { "name": "Cold Brew Citrus", "desc": "12h cold maceration with citrus notes." },
+    "c2": { "name": "Iced Latte", "desc": "Espresso shaken with cold milk and ice." },
+    "c3": { "name": "Espresso Tonic", "desc": "Double shot of espresso over tonic water and ice." },
+    "c4": { "name": "Iced Americano", "desc": "Espresso over ice and cold water, classic and refreshing." },
+    "f1": { "name": "Mocha Frappe", "desc": "Iced coffee blend with Swiss chocolate." },
+    "f2": { "name": "Cookies & Cream Frappe", "desc": "Delicious blend of cookies, coffee and cream." },
+    "f3": { "name": "Caramel Crunch Frappe", "desc": "Caramel frappe with crunchy toffee bits." },
+    "t1": { "name": "Ceremonial Matcha", "desc": "Ceremonial grade Japanese green tea, artisanally whisked." },
+    "t2": { "name": "Chai Latte", "desc": "Spiced black tea blend with creamy milk." },
+    "t3": { "name": "Golden Milk", "desc": "Ancient turmeric, ginger and spices drink." },
+    "t4": { "name": "Iced Hibiscus Tea", "desc": "Refreshing hibiscus flower infusion with a touch of lemon." }
+  }
+}

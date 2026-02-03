@@ -2,13 +2,16 @@ import { Coffee, ShoppingCart, User } from "lucide-react";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../store";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { LanguageSelector } from "./LanguageSelector";
 
 export const Header = () => {
+  const { t } = useTranslation();
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const itemCount = cartItems.length;
 
   return (
-    <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-[100] w-[calc(100%-3rem)] max-w-2xl">
+    <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-[100] w-[calc(100%-3rem)] max-w-3xl">
       <div className="bg-coffee-900/40 backdrop-blur-2xl border border-white/5 rounded-full px-8 py-4 flex items-center justify-between shadow-[0_0_50px_rgba(0,0,0,0.3)]">
         <Link to="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 bg-brand-orange/20 rounded-full flex items-center justify-center border border-brand-orange/30 group-hover:rotate-12 transition-all duration-500">
@@ -24,29 +27,32 @@ export const Header = () => {
           </div>
         </Link>
 
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-8">
           <div className="hidden md:flex items-center gap-8">
             <Link
-              to="/"
+              to="/#menu"
               className="text-[10px] font-black text-coffee-300 hover:text-white transition-colors uppercase tracking-[0.2em]"
             >
-              Menu
+              {t("nav.menu")}
             </Link>
             <Link
               to="/order"
               className="text-[10px] font-black text-coffee-300 hover:text-white transition-colors uppercase tracking-[0.2em]"
             >
-              Craft
+              {t("nav.craft")}
             </Link>
             <Link
-              to="#nosotros"
+              to="/#about"
               className="text-[10px] font-black text-coffee-300 hover:text-white transition-colors uppercase tracking-[0.2em]"
             >
-              Story
+              {t("nav.story")}
             </Link>
           </div>
 
+          <div className="h-6 w-px bg-white/10 hidden sm:block"></div>
+
           <div className="flex items-center gap-4">
+            <LanguageSelector />
             <Link to="/cart" className="p-2 group">
               <div className="relative">
                 <ShoppingCart className="w-5 h-5 text-white group-hover:text-brand-orange transition-all duration-300" />

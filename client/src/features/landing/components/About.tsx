@@ -1,7 +1,11 @@
+import { useTranslation } from "react-i18next";
+
 export const About = () => {
+  const { t } = useTranslation();
+
   return (
     <section
-      id="nosotros"
+      id="about"
       className="bg-coffee-900 text-white py-32 overflow-hidden relative"
     >
       {/* Decorative Background Elements */}
@@ -22,10 +26,10 @@ export const About = () => {
             {/* Overlay Text on Image */}
             <div className="absolute bottom-12 left-12 right-12 p-8 bg-black/40 backdrop-blur-xl border border-white/10 rounded-[2rem] transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
               <div className="text-brand-orange text-xs font-black uppercase tracking-[0.2em] mb-2">
-                Heritage
+                {t("about.heritage_badge")}
               </div>
               <div className="text-2xl font-serif font-bold italic text-white leading-tight">
-                Founded on a passion for perfection since 1994.
+                {t("about.heritage_text")}
               </div>
             </div>
           </div>
@@ -35,23 +39,21 @@ export const About = () => {
           <div className="space-y-4">
             <div className="inline-flex items-center gap-3 px-4 py-1.5 bg-brand-orange/10 rounded-full border border-brand-orange/20">
               <span className="text-[10px] font-black text-brand-orange uppercase tracking-[0.3em]">
-                Our Philosophy
+                {t("about.badge")}
               </span>
             </div>
             <h3 className="text-5xl md:text-7xl font-serif font-black leading-[0.9] tracking-tighter">
-              Crafting <br />
+              {t("about.title_part1")} <br />
               <span className="text-brand-orange italic">
-                Masterpieces
+                {t("about.title_italic")}
               </span>{" "}
               <br />
-              In Every Cup.
+              {t("about.title_part2")}
             </h3>
           </div>
 
           <p className="text-lg text-coffee-200 leading-relaxed font-light max-w-lg">
-            At Caffeine Crafter, we believe coffee is more than a beverage—it's
-            an artisanal experience. We source only the rarest beans, roasted
-            with surgical precision to unlock a symphony of flavors.
+            {t("about.desc")}
           </p>
 
           <div className="grid grid-cols-2 gap-8 pt-6">
@@ -60,7 +62,7 @@ export const About = () => {
                 100%
               </div>
               <div className="text-[10px] text-brand-orange uppercase tracking-[0.2em] font-black">
-                Ethically Sourced
+                {t("about.stats.ethical")}
               </div>
               <div className="w-12 h-0.5 bg-brand-orange/30"></div>
             </div>
@@ -69,14 +71,14 @@ export const About = () => {
                 48h
               </div>
               <div className="text-[10px] text-brand-orange uppercase tracking-[0.2em] font-black">
-                Roast-to-Cup
+                {t("about.stats.roast")}
               </div>
               <div className="w-12 h-0.5 bg-brand-orange/30"></div>
             </div>
           </div>
 
           <button className="group flex items-center gap-4 text-white font-bold uppercase tracking-[0.2em] text-xs hover:text-brand-orange transition-colors">
-            Our Full Story
+            {t("about.full_story")}
             <span className="w-12 h-px bg-white/20 group-hover:bg-brand-orange group-hover:w-20 transition-all duration-500"></span>
           </button>
         </div>

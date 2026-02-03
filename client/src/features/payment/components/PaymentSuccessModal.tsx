@@ -1,5 +1,6 @@
 import { Modal } from '../../../components/ui/Modal';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface PaymentSuccessModalProps {
   isOpen: boolean;
@@ -7,6 +8,8 @@ interface PaymentSuccessModalProps {
 }
 
 export const PaymentSuccessModal = ({ isOpen, onClose }: PaymentSuccessModalProps) => {
+  const { t } = useTranslation();
+
   return (
     <Modal isOpen={isOpen} hideCloseButton>
       <div className="flex flex-col items-center text-center space-y-6 py-4">
@@ -38,10 +41,14 @@ export const PaymentSuccessModal = ({ isOpen, onClose }: PaymentSuccessModalProp
         </div>
 
         <div className="space-y-2">
-          <h2 className="text-3xl font-black text-coffee-900 tracking-tight">¡Pago Exitoso!</h2>
+          <h2 className="text-3xl font-black text-coffee-900 tracking-tight">
+            {t("payment.success.title")}
+          </h2>
           <p className="text-coffee-600 font-medium">
-            Tu café se está preparando con amor. <br/> 
-            <span className="text-sm text-coffee-400">Te enviaremos un correo con los detalles.</span>
+            {t("payment.success.subtitle")} <br/> 
+            <span className="text-sm text-coffee-400">
+              {t("payment.success.details")}
+            </span>
           </p>
         </div>
 
@@ -50,7 +57,7 @@ export const PaymentSuccessModal = ({ isOpen, onClose }: PaymentSuccessModalProp
             onClick={onClose}
             className="w-full bg-coffee-900 text-white py-4 rounded-2xl font-bold hover:bg-coffee-800 transition-all flex items-center justify-center gap-2 group shadow-lg"
           >
-            Volver al Inicio
+            {t("payment.success.back_to_home")}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>

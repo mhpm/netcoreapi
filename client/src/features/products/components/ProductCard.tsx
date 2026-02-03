@@ -3,6 +3,7 @@ import type { Product } from "../../../types";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../cart/cartSlice";
 import { getCoffeeImage, getCoffeeDescription } from "../utils/coffeeUtils";
+import { useTranslation } from "react-i18next";
 
 interface ProductCardProps {
   product: Product;
@@ -10,6 +11,7 @@ interface ProductCardProps {
 
 export const ProductCard = ({ product }: ProductCardProps) => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const handleAddToCart = () => {
     dispatch(
@@ -21,7 +23,12 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   const image = getCoffeeImage(product.name);
-  const description = getCoffeeDescription(product.name);
+  const description = t(`products.descriptions.${product.name}`, {
+    defaultValue: getCoffeeDescription(product.name),
+  });
+  const name = t(`products.names.${product.name}`, {
+    defaultValue: product.name,
+  });
 
   return (
     <div className="bg-coffee-800/40 backdrop-blur-sm rounded-[3rem] p-8 shadow-xl hover:shadow-2xl transition-all duration-500 group border border-white/5 flex flex-col items-center text-center">
@@ -33,7 +40,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-coffee-700 group-hover:border-brand-orange/30 transition-all duration-500 transform group-hover:scale-105 bg-coffee-900">
           <img
             src={image}
-            alt={product.name}
+            alt={name}
             className="w-full h-full object-cover"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
@@ -52,7 +59,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       <div className="space-y-4 flex-1 flex flex-col items-center">
         <div>
           <h3 className="text-2xl font-serif font-bold text-white mb-2 group-hover:text-brand-orange transition-colors">
-            {product.name}
+            {name}
           </h3>
           <p className="text-coffee-300 text-sm leading-relaxed max-w-[200px]">
             {description}
@@ -65,7 +72,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         >
           <span className="relative z-10 flex items-center gap-2">
             <Plus className="w-4 h-4 group-hover/btn:rotate-90 transition-transform duration-300" />
-            Add to Order
+            {t("products.add_to_order")}
           </span>
           <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover/btn:animate-shimmer"></div>
           <div className="absolute inset-0 bg-black/10 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>

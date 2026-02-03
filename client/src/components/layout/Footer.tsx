@@ -1,6 +1,9 @@
 import { Coffee } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-coffee-900 border-t border-white/5 py-16 text-coffee-400">
       <div className="max-w-7xl mx-auto px-6">
@@ -25,7 +28,7 @@ export const Footer = () => {
             </a>
           </div>
           <p className="text-xs font-medium text-coffee-600">
-            © 2026 Caffeine Crafter. Artesanalmente hecho para ti.
+            © 2026 Caffeine Crafter. {t("footer.made_with_love")}
           </p>
         </div>
       </div>

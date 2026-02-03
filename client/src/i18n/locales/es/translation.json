@@ -1,0 +1,162 @@
+{
+  "nav": {
+    "menu": "Menú",
+    "craft": "Artesanía",
+    "story": "Historia"
+  },
+  "hero": {
+    "badge": "Experiencia de Café Premium",
+    "title_part1": "Saborea el",
+    "title_italic": "Lujo",
+    "title_part2": "del Café.",
+    "subtitle": "Vive la mezcla perfecta entre tradición e innovación. Creado por maestros, entregado a tu alma.",
+    "order_now": "Pedir Ahora",
+    "explore_menu": "Explorar Menú",
+    "rating": "Calificación",
+    "coffee_lovers": "Amantes del Café",
+    "authentic": "Auténtico",
+    "handcrafted": "Hecho a Mano",
+    "categories": {
+      "all": "Todo el Café",
+      "pastries": "Repostería",
+      "specials": "Especiales",
+      "merchandise": "Mercancía",
+      "gifts": "Regalos"
+    }
+  },
+  "features": {
+    "badge": "Colección Curada",
+    "title": "Nuestro Menú Signature",
+    "subtitle": "Explora nuestra selección de cafés premium, cada uno tostado a la perfección y preparado con precisión artesanal.",
+    "items": {
+      "quality": {
+        "title": "Calidad Premium",
+        "desc": "Granos de origen único seleccionados a mano en suelos volcánicos."
+      },
+      "roast": {
+        "title": "Tostado Artesanal",
+        "desc": "Tostado en lotes pequeños para un perfil de sabor máximo."
+      },
+      "trade": {
+        "title": "Comercio Directo",
+        "desc": "Apoyando a los agricultores con un abastecimiento ético."
+      }
+    },
+    "learn_more": "Saber Más"
+  },
+  "about": {
+    "badge": "Nuestra Filosofía",
+    "title_part1": "Creando",
+    "title_italic": "Obras Maestras",
+    "title_part2": "En Cada Taza.",
+    "desc": "En Caffeine Crafter, creemos que el café es más que una bebida: es una experiencia artesanal. Suministramos solo los granos más raros, tostados con precisión quirúrgica.",
+    "heritage_badge": "Herencia",
+    "heritage_text": "Fundado bajo una pasión por la perfección desde 1994.",
+    "stats": {
+      "ethical": "Origen Ético",
+      "roast": "Del Tostado a la Taza"
+    },
+    "full_story": "Nuestra Historia Completa"
+  },
+  "products": {
+    "add_to_order": "Agregar al Pedido",
+    "loading": "Preparando tu experiencia de café...",
+    "error": "Error al cargar los productos. Por favor, inténtalo de nuevo.",
+    "names": {
+      "Espresso Intenso": "Espresso Intenso",
+      "Cappuccino Cremoso": "Cappuccino Cremoso",
+      "Latte Macchiato": "Latte Macchiato",
+      "Café Americano": "Café Americano",
+      "Mocha Especial": "Mocha Especial"
+    },
+    "descriptions": {
+      "Espresso Intenso": "Pequeño en tamaño, grande en energía. Un shot puro de adrenalina con crema dorada.",
+      "Cappuccino Cremoso": "El equilibrio perfecto entre espresso, leche vaporizada y una espuma irresistible.",
+      "Latte Macchiato": "Suavidad en capas. Leche aterciopelada manchada con nuestro mejor espresso.",
+      "Café Americano": "Clásico y reconfortante. Nuestro espresso diluido para disfrutar sorbo a sorbo.",
+      "Mocha Especial": "Para los amantes del dulce. Una mezcla perfecta de espresso, chocolate y leche.",
+      "default": "Una mezcla equilibrada con notas de chocolate y frutos secos."
+    }
+  },
+  "footer": {
+    "made_with_love": "Artesanalmente hecho para ti."
+  },
+  "cart": {
+    "empty": "Tu carrito está vacío. ¡Es hora de llenarlo de energía!",
+    "remove": "Eliminar",
+    "back_to_menu": "Volver al Menú",
+    "title": "Tu Carrito",
+    "order_summary": "Resumen del Pedido",
+    "checkout": "Finalizar Compra",
+    "add_items_to_checkout": "Agrega productos para proceder al pago"
+  },
+  "order": {
+    "steps": {
+      "1": "Elige tu Bebida",
+      "2": "Personaliza",
+      "3": "Resumen"
+    },
+    "categories": {
+      "caliente": "Caliente",
+      "frio": "Frío",
+      "frappe": "Frappe",
+      "te": "Té"
+    },
+    "title": "¿Qué te apetece hoy?",
+    "subtitle": "Selecciona una categoría para empezar",
+    "drink_list_title": "Bebidas {{category}}",
+    "customize_title": "Personaliza tu {{name}}",
+    "milk_selection": "Tipo de Leche",
+    "extra_selection": "Extras (Opcional)",
+    "summary_title": "¡Casi listo!",
+    "summary_subtitle": "Revisa tu creación personalizada",
+    "summary_drink": "Bebida",
+    "summary_milk": "Leche",
+    "summary_extras": "Extras",
+    "summary_total": "Total",
+    "next": "Continuar",
+    "back": "Atrás",
+    "finish": "Finalizar Pedido",
+    "add_to_cart": "Agregar al Carrito",
+    "checkout_now": "Pagar Ahora",
+    "add_and_continue": "Agregar y Seguir Comprando",
+    "milk": {
+      "entera": "Leche Entera",
+      "deslactosada": "Deslactosada",
+      "almendra": "Almendra",
+      "avena": "Avena"
+    },
+    "extras": {
+      "shot": "Extra Shot Espresso",
+      "crema": "Crema Batida",
+      "vainilla": "Jarabe Vainilla",
+      "caramelo": "Salsa Caramelo"
+    }
+  },
+  "payment": {
+    "success": {
+      "title": "¡Pago Exitoso!",
+      "subtitle": "Tu café se está preparando con amor.",
+      "details": "Te enviaremos un correo con los detalles.",
+      "back_to_home": "Volver al Inicio"
+    }
+  },
+  "menu": {
+    "h1": { "name": "Espresso Intenso", "desc": "Shot puro de energía concentrada." },
+    "h2": { "name": "Cappuccino Artesanal", "desc": "Espresso con leche vaporizada y espuma sedosa." },
+    "h3": { "name": "Latte Vainilla", "desc": "Suave espresso con leche y un toque de vainilla natural." },
+    "h4": { "name": "Flat White", "desc": "Doble espresso con una fina capa de leche cremada." },
+    "h5": { "name": "Mocha Blanco", "desc": "Espresso con chocolate blanco y leche vaporizada." },
+    "c1": { "name": "Cold Brew Citrus", "desc": "Maceración en frío por 12h con notas cítricas." },
+    "c2": { "name": "Latte Frío", "desc": "Espresso agitado con leche fría y hielo." },
+    "c3": { "name": "Espresso Tonic", "desc": "Doble shot de espresso sobre agua tónica y hielo." },
+    "c4": { "name": "Iced Americano", "desc": "Espresso sobre hielo y agua fría, clásico y refrescante." },
+    "f1": { "name": "Mocha Frappe", "desc": "Batido helado de café con chocolate suizo." },
+    "f2": { "name": "Cookies & Cream Frappe", "desc": "Deliciosa mezcla de galletas, café y crema." },
+    "f3": { "name": "Caramel Crunch Frappe", "desc": "Frappé de caramelo con trozos de toffee crujiente." },
+    "t1": { "name": "Matcha Ceremonial", "desc": "Té verde japonés grado ceremonial, batido artesanalmente." },
+    "t2": { "name": "Chai Latte", "desc": "Mezcla especiada de té negro con leche cremosa." },
+    "t3": { "name": "Golden Milk", "desc": "Bebida ancestral de cúrcuma, jengibre y especias." },
+    "t4": { "name": "Iced Hibiscus Tea", "desc": "Infusión refrescante de flor de jamaica con un toque de limón." }
+  }
+}

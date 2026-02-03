@@ -48,6 +48,7 @@
 }
 
 :root {
+  scroll-behavior: smooth;
   /* New Professional Palette Variables */
   /* Core Brand Colors */
   --color-brand-dark: #1A0F0E;    /* Deeper, more elegant coffee black */

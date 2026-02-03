@@ -2,8 +2,8 @@ node_modules
 .vscode
 .idea
 *.log
-bin/
-obj/
+**/bin/
+**/obj/
 publish/
 .vs/
 *.user

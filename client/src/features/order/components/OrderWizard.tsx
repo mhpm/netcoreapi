@@ -1,18 +1,20 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { ArrowRight, Check, ShoppingBag, ArrowLeft, Plus } from "lucide-react";
 import { addToCart } from "../../cart/cartSlice";
 import { DRINK_MENU, MILK_OPTIONS, EXTRA_OPTIONS } from "../data/menuData";
 import type { DrinkOption } from "../data/menuData";
 import type { Category } from "../../../types";
 
-const STEPS = ["Elige tu Bebida", "Personaliza", "Resumen"];
-
 export const OrderWizard = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
+
+  const STEPS = [t("order.steps.1"), t("order.steps.2"), t("order.steps.3")];
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(
     null,
   );
@@ -52,10 +54,8 @@ export const OrderWizard = () => {
         price: currentPrice,
         category: selectedDrink.category,
         image: selectedDrink.image,
-        milk: selectedMilk.name,
-        extras: selectedExtras.map(
-          (id) => EXTRA_OPTIONS.find((e) => e.id === id)?.name || id,
-        ),
+        milk: selectedMilk.id,
+        extras: selectedExtras,
         totalPrice: currentPrice,
       }),
     );
@@ -127,11 +127,9 @@ export const OrderWizard = () => {
             <div className="space-y-12">
               <div className="text-center space-y-2">
                 <h2 className="text-3xl font-bold text-white">
-                  ¿Qué te apetece hoy?
+                  {t("order.title")}
                 </h2>
-                <p className="text-coffee-300">
-                  Selecciona una categoría para empezar
-                </p>
+                <p className="text-coffee-300">{t("order.subtitle")}</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -163,11 +161,7 @@ export const OrderWizard = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                     <div className="absolute bottom-6 left-6 text-left">
                       <span className="text-white text-2xl font-bold capitalize">
-                        {cat === "frio"
-                          ? "Fríos"
-                          : cat === "caliente"
-                            ? "Calientes"
-                            : "Tés"}
+                        {t(`order.categories.${cat}`)}
                       </span>
                     </div>
                   </button>
@@ -177,50 +171,52 @@ export const OrderWizard = () => {
               {selectedCategory && (
                 <div className="space-y-6 pt-8 border-t border-white/5">
                   <h3 className="text-xl font-bold text-white capitalize">
-                    Bebidas{" "}
-                    {selectedCategory === "te"
-                      ? "de Té"
-                      : selectedCategory === "frio"
-                        ? "Frías"
-                        : "Calientes"}
+                    {t("order.drink_list_title", {
+                      category: t(`order.categories.${selectedCategory}`),
+                    })}
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {DRINK_MENU.filter(
                       (drink) => drink.category === selectedCategory,
-                    ).map((drink) => (
-                      <button
-                        key={drink.id}
-                        onClick={() => setSelectedDrink(drink)}
-                        className={`
-                          p-4 rounded-2xl flex items-center gap-4 transition-all border
-                          ${selectedDrink?.id === drink.id ? "bg-brand-orange border-brand-orange text-white shadow-lg shadow-brand-orange/20" : "bg-coffee-800 border-white/5 text-coffee-300 hover:bg-white/5"}
-                        `}
-                      >
-                        <img
-                          src={drink.image}
-                          className="w-16 h-16 rounded-xl object-cover"
-                          alt={drink.name}
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.src =
-                              "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80";
-                          }}
-                        />
-                        <div className="text-left flex-1">
-                          <p className="font-bold">{drink.name}</p>
-                          <p
-                            className={`text-xs ${selectedDrink?.id === drink.id ? "text-white/80" : "text-coffee-400"}`}
-                          >
-                            ${drink.price.toFixed(2)}
-                          </p>
-                        </div>
-                        {selectedDrink?.id === drink.id && (
-                          <div className="bg-white/20 p-1.5 rounded-full">
-                            <Check className="w-4 h-4" />
+                    ).map((drink) => {
+                      const localizedName = t(`products.names.${drink.name}`, {
+                        defaultValue: drink.name,
+                      });
+                      return (
+                        <button
+                          key={drink.id}
+                          onClick={() => setSelectedDrink(drink)}
+                          className={`
+                            p-4 rounded-2xl flex items-center gap-4 transition-all border
+                            ${selectedDrink?.id === drink.id ? "bg-brand-orange border-brand-orange text-white shadow-lg shadow-brand-orange/20" : "bg-coffee-800 border-white/5 text-coffee-300 hover:bg-white/5"}
+                          `}
+                        >
+                          <img
+                            src={drink.image}
+                            className="w-16 h-16 rounded-xl object-cover"
+                            alt={localizedName}
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.src =
+                                "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80";
+                            }}
+                          />
+                          <div className="text-left flex-1">
+                            <p className="font-bold">{localizedName}</p>
+                            <p
+                              className={`text-xs ${selectedDrink?.id === drink.id ? "text-white/80" : "text-coffee-400"}`}
+                            >
+                              ${drink.price.toFixed(2)}
+                            </p>
                           </div>
-                        )}
-                      </button>
-                    ))}
+                          {selectedDrink?.id === drink.id && (
+                            <div className="bg-white/20 p-1.5 rounded-full">
+                              <Check className="w-4 h-4" />
+                            </div>
+                          )}
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -242,7 +238,11 @@ export const OrderWizard = () => {
                 />
                 <div>
                   <h2 className="text-3xl font-bold text-white">
-                    Personaliza tu {selectedDrink.name}
+                    {t("order.customize_title", {
+                      name: t(`products.names.${selectedDrink.name}`, {
+                        defaultValue: selectedDrink.name,
+                      }),
+                    })}
                   </h2>
                   <p className="text-brand-orange font-bold text-lg">
                     ${currentPrice.toFixed(2)}
@@ -257,7 +257,7 @@ export const OrderWizard = () => {
                     <span className="w-8 h-8 rounded-xl bg-coffee-800 flex items-center justify-center text-sm border border-white/5">
                       1
                     </span>
-                    Tipo de Leche
+                    {t("order.milk_selection")}
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {MILK_OPTIONS.map((milk) => (
@@ -270,7 +270,11 @@ export const OrderWizard = () => {
                         `}
                       >
                         <div className="flex justify-between items-center">
-                          <span className="font-bold">{milk.name}</span>
+                          <span className="font-bold">
+                            {t(`order.milk.${milk.id}`, {
+                              defaultValue: milk.name,
+                            })}
+                          </span>
                           <span className="text-xs opacity-80">
                             +${milk.price.toFixed(2)}
                           </span>
@@ -286,7 +290,7 @@ export const OrderWizard = () => {
                     <span className="w-8 h-8 rounded-xl bg-coffee-800 flex items-center justify-center text-sm border border-white/5">
                       2
                     </span>
-                    Extras (Opcional)
+                    {t("order.extra_selection")}
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {EXTRA_OPTIONS.map((extra) => (
@@ -305,7 +309,11 @@ export const OrderWizard = () => {
                         `}
                       >
                         <div className="flex justify-between items-center">
-                          <span className="font-bold">{extra.name}</span>
+                          <span className="font-bold">
+                            {t(`order.extras.${extra.id}`, {
+                              defaultValue: extra.name,
+                            })}
+                          </span>
                           <span className="text-xs opacity-80">
                             +${extra.price.toFixed(2)}
                           </span>
@@ -324,39 +332,55 @@ export const OrderWizard = () => {
                 <div className="w-20 h-20 bg-brand-orange/10 rounded-[2rem] flex items-center justify-center mx-auto mb-6">
                   <Check className="w-10 h-10 text-brand-orange" />
                 </div>
-                <h2 className="text-3xl font-bold text-white">¡Casi listo!</h2>
-                <p className="text-coffee-300">
-                  Revisa tu creación personalizada
-                </p>
+                <h2 className="text-3xl font-bold text-white">
+                  {t("order.summary_title")}
+                </h2>
+                <p className="text-coffee-300">{t("order.summary_subtitle")}</p>
               </div>
 
               <div className="space-y-6 bg-coffee-900/50 p-6 rounded-[2rem] border border-white/5">
                 <div className="flex justify-between items-center">
-                  <span className="text-coffee-400 font-medium">Bebida</span>
+                  <span className="text-coffee-400 font-medium">
+                    {t("order.summary_drink")}
+                  </span>
                   <span className="text-white font-bold">
-                    {selectedDrink.name}
+                    {t(`products.names.${selectedDrink.name}`, {
+                      defaultValue: selectedDrink.name,
+                    })}
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-coffee-400 font-medium">Leche</span>
+                  <span className="text-coffee-400 font-medium">
+                    {t("order.summary_milk")}
+                  </span>
                   <span className="text-white font-bold">
-                    {selectedMilk.name}
+                    {t(`order.milk.${selectedMilk.id}`, {
+                      defaultValue: selectedMilk.name,
+                    })}
                   </span>
                 </div>
                 {selectedExtras.length > 0 && (
                   <div className="flex justify-between items-start">
-                    <span className="text-coffee-400 font-medium">Extras</span>
+                    <span className="text-coffee-400 font-medium">
+                      {t("order.summary_extras")}
+                    </span>
                     <div className="text-right">
                       {selectedExtras.map((id) => (
                         <p key={id} className="text-white font-bold text-sm">
-                          {EXTRA_OPTIONS.find((e) => e.id === id)?.name}
+                          {t(`order.extras.${id}`, {
+                            defaultValue:
+                              EXTRA_OPTIONS.find((e) => e.id === id)?.name ||
+                              id,
+                          })}
                         </p>
                       ))}
                     </div>
                   </div>
                 )}
                 <div className="pt-6 border-t border-white/10 flex justify-between items-center">
-                  <span className="text-white text-lg font-bold">Total</span>
+                  <span className="text-white text-lg font-bold">
+                    {t("order.summary_total")}
+                  </span>
                   <span className="text-brand-orange text-2xl font-black">
                     ${currentPrice.toFixed(2)}
                   </span>
@@ -369,14 +393,14 @@ export const OrderWizard = () => {
                   className="w-full bg-brand-orange text-white py-5 rounded-[1.5rem] font-bold shadow-lg shadow-brand-orange/20 hover:bg-brand-orange/90 transition-all flex items-center justify-center gap-2 text-lg"
                 >
                   <ShoppingBag className="w-5 h-5" />
-                  Pagar Ahora
+                  {t("order.checkout_now")}
                 </button>
                 <button
                   onClick={() => handleAddToCart(false)}
                   className="w-full bg-white/5 text-coffee-200 py-5 rounded-[1.5rem] font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2"
                 >
                   <Plus className="w-5 h-5" />
-                  Agregar y Seguir Comprando
+                  {t("order.add_and_continue")}
                 </button>
               </div>
             </div>
@@ -395,7 +419,7 @@ export const OrderWizard = () => {
               `}
             >
               <ArrowLeft className="w-5 h-5" />
-              Atrás
+              {t("order.back")}
             </button>
             <button
               onClick={handleNext}
@@ -405,7 +429,7 @@ export const OrderWizard = () => {
                 ${currentStep === 1 && !selectedDrink ? "bg-coffee-800 text-coffee-500 cursor-not-allowed border border-white/5" : "bg-brand-orange text-white shadow-lg shadow-brand-orange/20 hover:bg-brand-orange/90"}
               `}
             >
-              Continuar
+              {t("order.next")}
               <ArrowRight className="w-5 h-5" />
             </button>
           </div>

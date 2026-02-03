@@ -1,9 +1,12 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const Hero = () => {
+  const { t } = useTranslation();
+
   return (
-    <header className="relative min-h-[90vh] flex flex-col justify-center px-6 overflow-hidden bg-coffee-900">
+    <header className="relative min-h-[95vh] flex flex-col justify-center px-6 pt-32 lg:pt-40 overflow-hidden bg-coffee-900">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden">
         {/* Large Decorative Circle */}
@@ -18,22 +21,21 @@ export const Hero = () => {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/30 shadow-[0_0_15px_rgba(245,158,11,0.2)]">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-orange shadow-[0_0_8px_rgba(245,158,11,1)] animate-pulse"></span>
               <span className="text-[10px] font-bold text-brand-orange uppercase tracking-[0.2em]">
-                Premium Coffee Experience
+                {t("hero.badge")}
               </span>
             </div>
 
             <h1 className="text-6xl md:text-8xl font-serif font-black text-white leading-[0.9] tracking-tighter">
-              Savor the <br />
+              {t("hero.title_part1")} <br />
               <span className="text-brand-orange italic drop-shadow-[0_0_15px_rgba(245,158,11,0.5)]">
-                Luxury
+                {t("hero.title_italic")}
               </span>{" "}
               <br />
-              of Coffee.
+              {t("hero.title_part2")}
             </h1>
 
             <p className="text-coffee-200 text-lg md:text-xl max-w-lg leading-relaxed font-light">
-              Experience the perfect blend of tradition and innovation. Crafted
-              by masters, delivered to your soul.
+              {t("hero.subtitle")}
             </p>
           </div>
 
@@ -43,16 +45,19 @@ export const Hero = () => {
               className="group relative px-10 py-5 bg-brand-orange text-white rounded-full font-bold shadow-[0_20px_50px_rgba(245,158,11,0.3)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.5)] transition-all overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-3">
-                Order Now
+                {t("hero.order_now")}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
               <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:animate-shimmer"></div>
               <div className="absolute inset-0 bg-black/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
             </Link>
 
-            <button className="px-10 py-5 rounded-full border border-white/10 text-white font-bold hover:bg-white/5 hover:border-brand-orange/50 transition-all backdrop-blur-sm shadow-xl">
-              Explore Menu
-            </button>
+            <Link
+              to="/#menu"
+              className="px-10 py-5 rounded-full border border-white/10 text-white font-bold hover:bg-white/5 hover:border-brand-orange/50 transition-all backdrop-blur-sm shadow-xl flex items-center justify-center"
+            >
+              {t("hero.explore_menu")}
+            </Link>
           </div>
 
           <div className="pt-8 flex items-center gap-8 border-t border-white/5 max-w-md">
@@ -61,7 +66,7 @@ export const Hero = () => {
                 4.9/5
               </div>
               <div className="text-xs text-coffee-400 uppercase tracking-widest font-bold">
-                Rating
+                {t("hero.rating")}
               </div>
             </div>
             <div className="w-px h-8 bg-white/10"></div>
@@ -70,7 +75,7 @@ export const Hero = () => {
                 12k+
               </div>
               <div className="text-xs text-coffee-400 uppercase tracking-widest font-bold">
-                Coffee Lovers
+                {t("hero.coffee_lovers")}
               </div>
             </div>
           </div>
@@ -106,10 +111,10 @@ export const Hero = () => {
             {/* Small Detail Badge */}
             <div className="absolute -bottom-4 -right-4 bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-3xl shadow-2xl rotate-[-6deg] group-hover:rotate-0 transition-all duration-500 z-20">
               <div className="text-brand-orange text-sm font-black uppercase tracking-[0.2em] mb-1">
-                Authentic
+                {t("hero.authentic")}
               </div>
               <div className="text-white text-xl font-serif font-bold italic">
-                Handcrafted
+                {t("hero.handcrafted")}
               </div>
             </div>
           </div>
@@ -117,18 +122,22 @@ export const Hero = () => {
       </div>
 
       {/* Categories Bar - Refined */}
-      <div className="max-w-7xl mx-auto w-full pt-20">
+      <div className="max-w-7xl mx-auto w-full pt-12">
         <div className="flex gap-8 overflow-x-auto no-scrollbar py-4 border-t border-white/5">
-          {["All Coffee", "Pastries", "Specials", "Merchandise", "Gifts"].map(
-            (item, i) => (
-              <button
-                key={i}
-                className="text-sm font-bold text-coffee-400 hover:text-white transition-colors uppercase tracking-[0.2em] whitespace-nowrap"
-              >
-                {item}
-              </button>
-            ),
-          )}
+          {[
+            t("hero.categories.all"),
+            t("hero.categories.pastries"),
+            t("hero.categories.specials"),
+            t("hero.categories.merchandise"),
+            t("hero.categories.gifts"),
+          ].map((item, i) => (
+            <button
+              key={i}
+              className="text-sm font-bold text-coffee-400 hover:text-white transition-colors uppercase tracking-[0.2em] whitespace-nowrap"
+            >
+              {item}
+            </button>
+          ))}
         </div>
       </div>
     </header>

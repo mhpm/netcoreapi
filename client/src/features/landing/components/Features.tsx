@@ -1,25 +1,28 @@
 import { CheckCircle, Coffee, ShoppingCart } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export const Features = () => {
+  const { t } = useTranslation();
+
   return (
-    <section className="relative z-20 -mt-20 px-6 max-w-7xl mx-auto">
+    <section className="relative z-20 mt-12 px-6 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
           {
-            title: "Premium Quality",
-            desc: "Hand-picked single origin beans from volcanic soils.",
+            title: t("features.items.quality.title"),
+            desc: t("features.items.quality.desc"),
             icon: CheckCircle,
             accent: "from-brand-orange/20 to-transparent",
           },
           {
-            title: "Artisanal Roast",
-            desc: "Small-batch roasting for peak flavor profile.",
+            title: t("features.items.roast.title"),
+            desc: t("features.items.roast.desc"),
             icon: Coffee,
             accent: "from-coffee-700/40 to-transparent",
           },
           {
-            title: "Direct Trade",
-            desc: "Supporting farmers with ethical sourcing.",
+            title: t("features.items.trade.title"),
+            desc: t("features.items.trade.desc"),
             icon: ShoppingCart,
             accent: "from-brand-red/10 to-transparent",
           },
@@ -49,7 +52,7 @@ export const Features = () => {
 
               <div className="pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <span className="text-[10px] font-black text-brand-orange uppercase tracking-[0.2em]">
-                  Learn More ↗
+                  {t("features.learn_more")} ↗
                 </span>
               </div>
             </div>
