@@ -4,5 +4,12 @@ node_modules
 *.log
 bin/
 obj/
+publish/
 .vs/
 *.user
+*.suo
+*.userosscache
+*.sln.docstates
+TestResults/
+[Dd]ebug/
+[Rr]elease/
