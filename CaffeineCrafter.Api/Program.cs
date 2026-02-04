@@ -39,6 +39,11 @@ if (!string.IsNullOrEmpty(databaseUrl))
     connectionString = npgsqlBuilder.ToString();
 }
 
+if (string.IsNullOrEmpty(connectionString))
+{
+    throw new InvalidOperationException("Connection string is missing. Ensure 'DATABASE_URL' environment variable is set (Production) or User Secrets are initialized (Development).");
+}
+
 builder.Services.AddDbContext<AppDbContext>(opt => 
     opt.UseNpgsql(connectionString));
 
