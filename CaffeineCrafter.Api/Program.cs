@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using CaffeineCrafter.Api.Data;
 using Scalar.AspNetCore;
+using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +18,29 @@ builder.Services.AddCors(options =>
 
 // Add services to the container.
 builder.Services.AddControllers();
-builder.Services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("ProductsDb"));
+
+// Database configuration
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+
+if (!string.IsNullOrEmpty(databaseUrl))
+{
+    var databaseUri = new Uri(databaseUrl);
+    var userInfo = databaseUri.UserInfo.Split(':');
+    var npgsqlBuilder = new NpgsqlConnectionStringBuilder
+    {
+        Host = databaseUri.Host,
+        Port = databaseUri.Port,
+        Username = userInfo[0],
+        Password = userInfo[1],
+        Database = databaseUri.LocalPath.TrimStart('/'),
+        SslMode = SslMode.Require
+    };
+    connectionString = npgsqlBuilder.ToString();
+}
+
+builder.Services.AddDbContext<AppDbContext>(opt => 
+    opt.UseNpgsql(connectionString));
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
@@ -28,6 +51,9 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    // Apply migrations
+    context.Database.Migrate();
+    
     if (!context.Products.Any())
     {
         context.Products.AddRange(
