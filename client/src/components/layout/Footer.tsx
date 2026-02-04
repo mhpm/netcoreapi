@@ -5,11 +5,11 @@ export const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-coffee-900 border-t border-white/5 py-16 text-coffee-400">
+    <footer className="border-t border-white/5 py-16 text-coffee-400 backdrop-blur-sm bg-coffee-900/30">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-10">
           <div className="flex items-center gap-3">
-            <div className="bg-coffee-800 p-2 rounded-xl border border-white/5">
+            <div className="glass-panel p-2 rounded-xl">
               <Coffee className="w-6 h-6 text-brand-orange" />
             </div>
             <span className="text-2xl font-black text-white tracking-tighter">

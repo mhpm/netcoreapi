@@ -16,28 +16,36 @@ function ScrollToHash() {
   useEffect(() => {
     if (hash) {
       const id = hash.replace("#", "");
-      const element = document.getElementById(id);
 
-      if (element) {
-        // Use a slightly longer timeout and multiple attempts to ensure DOM is ready
-        const scroll = () => {
-          const offset = 80; // Account for fixed header
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - offset;
+      const scrollToElement = () => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+          return true;
+        }
+        return false;
+      };
 
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
+      // Try immediately
+      if (!scrollToElement()) {
+        const observer = new MutationObserver(() => {
+          if (scrollToElement()) {
+            observer.disconnect();
+          }
+        });
+
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true,
+        });
+
+        const timeout = setTimeout(() => observer.disconnect(), 5000);
+        return () => {
+          observer.disconnect();
+          clearTimeout(timeout);
         };
-
-        // Try immediately and again after a short delay
-        scroll();
-        const timer = setTimeout(scroll, 150);
-        return () => clearTimeout(timer);
       }
     } else if (pathname === "/") {
-      // If going to home without hash, scroll to top
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [pathname, hash]);

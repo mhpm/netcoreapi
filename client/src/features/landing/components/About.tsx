@@ -4,10 +4,7 @@ export const About = () => {
   const { t } = useTranslation();
 
   return (
-    <section
-      id="about"
-      className="bg-coffee-900 text-white py-32 overflow-hidden relative"
-    >
+    <section id="about" className="py-32 overflow-hidden relative">
       {/* Decorative Background Elements */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-brand-orange/5 blur-[120px] rounded-full -translate-x-1/2"></div>
 
@@ -24,7 +21,7 @@ export const About = () => {
             <div className="absolute inset-0 bg-linear-to-t from-coffee-900 via-transparent to-transparent opacity-60"></div>
 
             {/* Overlay Text on Image */}
-            <div className="absolute bottom-12 left-12 right-12 p-8 bg-black/40 backdrop-blur-xl border border-white/10 rounded-[2rem] transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+            <div className="absolute bottom-12 left-12 right-12 p-8 glass-panel rounded-[2rem] transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
               <div className="text-brand-orange text-xs font-black uppercase tracking-[0.2em] mb-2">
                 {t("about.heritage_badge")}
               </div>
@@ -37,7 +34,7 @@ export const About = () => {
 
         <div className="space-y-10 relative z-10">
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-3 px-4 py-1.5 bg-brand-orange/10 rounded-full border border-brand-orange/20">
+            <div className="inline-flex items-center gap-3 px-4 py-1.5 glass-panel !bg-brand-orange/10 !border-brand-orange/20 rounded-full">
               <span className="text-[10px] font-black text-brand-orange uppercase tracking-[0.3em]">
                 {t("about.badge")}
               </span>

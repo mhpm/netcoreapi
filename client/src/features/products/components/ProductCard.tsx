@@ -31,9 +31,12 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   });
 
   return (
-    <div className="bg-coffee-800/40 backdrop-blur-sm rounded-[3rem] p-8 shadow-xl hover:shadow-2xl transition-all duration-500 group border border-white/5 flex flex-col items-center text-center">
+    <div className="glass-panel rounded-[3rem] p-8 hover:shadow-[0_20px_40px_-15px_rgba(245,158,11,0.1)] transition-all duration-500 group flex flex-col items-center text-center relative overflow-hidden">
+      {/* Subtle shine effect */}
+      <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
       {/* Circular Image with decorative ring */}
-      <div className="relative w-48 h-48 mb-8">
+      <div className="relative w-48 h-48 mb-8 z-10">
         <div className="absolute inset-0 bg-brand-orange/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
         <div className="absolute -inset-2 border border-white/5 rounded-full group-hover:border-brand-orange/20 transition-colors duration-500"></div>
 

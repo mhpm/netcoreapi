@@ -47,6 +47,16 @@
   animation-name: zoom-in;
 }
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  section[id] {
+    scroll-margin-top: 120px;
+  }
+}
+
 :root {
   scroll-behavior: smooth;
   /* New Professional Palette Variables */
@@ -88,7 +98,6 @@
 
   color-scheme: dark;
   color: var(--color-coffee-50);
-  background-color: var(--color-coffee-900);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -96,12 +105,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+  }
+  
+  .glass-button {
+    @apply bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-md transition-all duration-300;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+  }
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: var(--color-coffee-900);
   color: var(--color-coffee-50);
+  background-color: var(--color-coffee-900);
 }
 
 h1, h2, h3, h4, h5, h6 {

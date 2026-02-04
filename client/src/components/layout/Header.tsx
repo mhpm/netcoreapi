@@ -12,7 +12,7 @@ export const Header = () => {
 
   return (
     <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-[100] w-[calc(100%-3rem)] max-w-3xl">
-      <div className="bg-coffee-900/40 backdrop-blur-2xl border border-white/5 rounded-full px-8 py-4 flex items-center justify-between shadow-[0_0_50px_rgba(0,0,0,0.3)]">
+      <div className="glass-panel rounded-full px-8 py-4 flex items-center justify-between !bg-coffee-900/60 !backdrop-blur-2xl">
         <Link to="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 bg-brand-orange/20 rounded-full flex items-center justify-center border border-brand-orange/30 group-hover:rotate-12 transition-all duration-500">
             <Coffee className="w-5 h-5 text-brand-orange" />

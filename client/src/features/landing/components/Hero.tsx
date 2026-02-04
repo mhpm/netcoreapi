@@ -6,7 +6,7 @@ export const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <header className="relative min-h-[95vh] flex flex-col justify-center px-6 pt-32 lg:pt-40 overflow-hidden bg-coffee-900">
+    <header className="relative min-h-[95vh] flex flex-col justify-center px-6 pt-32 lg:pt-40 overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden">
         {/* Large Decorative Circle */}
@@ -18,16 +18,16 @@ export const Hero = () => {
         {/* Left Content */}
         <div className="lg:col-span-6 space-y-8 animate-in fade-in slide-in-from-left-8 duration-1000">
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/30 shadow-[0_0_15px_rgba(245,158,11,0.2)]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel !bg-brand-orange/10 !border-brand-orange/30 shadow-[0_0_15px_rgba(245,158,11,0.2)]">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-orange shadow-[0_0_8px_rgba(245,158,11,1)] animate-pulse"></span>
               <span className="text-[10px] font-bold text-brand-orange uppercase tracking-[0.2em]">
                 {t("hero.badge")}
               </span>
             </div>
 
-            <h1 className="text-6xl md:text-8xl font-serif font-black text-white leading-[0.9] tracking-tighter">
+            <h1 className="text-6xl md:text-8xl font-serif font-black text-white leading-[0.9] tracking-tighter drop-shadow-2xl">
               {t("hero.title_part1")} <br />
-              <span className="text-brand-orange italic drop-shadow-[0_0_15px_rgba(245,158,11,0.5)]">
+              <span className="text-brand-orange italic drop-shadow-[0_0_25px_rgba(245,158,11,0.6)]">
                 {t("hero.title_italic")}
               </span>{" "}
               <br />
@@ -42,7 +42,7 @@ export const Hero = () => {
           <div className="flex flex-wrap gap-6 pt-4">
             <Link
               to="/order"
-              className="group relative px-10 py-5 bg-brand-orange text-white rounded-full font-bold shadow-[0_20px_50px_rgba(245,158,11,0.3)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.5)] transition-all overflow-hidden"
+              className="group relative px-10 py-5 bg-brand-orange text-white rounded-full font-bold shadow-[0_20px_50px_rgba(245,158,11,0.3)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.5)] transition-all overflow-hidden border border-white/20"
             >
               <span className="relative z-10 flex items-center gap-3">
                 {t("hero.order_now")}
@@ -54,7 +54,7 @@ export const Hero = () => {
 
             <Link
               to="/#menu"
-              className="px-10 py-5 rounded-full border border-white/10 text-white font-bold hover:bg-white/5 hover:border-brand-orange/50 transition-all backdrop-blur-sm shadow-xl flex items-center justify-center"
+              className="glass-button px-10 py-5 rounded-full text-white font-bold hover:!bg-white/10 hover:!border-brand-orange/50 transition-all shadow-xl flex items-center justify-center"
             >
               {t("hero.explore_menu")}
             </Link>

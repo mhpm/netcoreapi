@@ -19,7 +19,7 @@ export const CartList = ({ items }: CartListProps) => {
 
   if (items.length === 0) {
     return (
-      <div className="text-center py-12 bg-coffee-800 rounded-[2rem] border border-white/5">
+      <div className="text-center py-12 glass-panel rounded-[2rem]">
         <p className="text-coffee-400 font-medium">{t("cart.empty")}</p>
       </div>
     );
@@ -35,9 +35,9 @@ export const CartList = ({ items }: CartListProps) => {
         return (
           <div
             key={`${item.id}-${index}`}
-            className="flex items-center gap-4 bg-coffee-800 p-4 rounded-[1.5rem] border border-white/5"
+            className="flex items-center gap-4 glass-panel p-4 rounded-[1.5rem] hover:bg-white/10 transition-colors"
           >
-            <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+            <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 shadow-lg">
               <img
                 src={item.image || getCoffeeImage(item.name)}
                 alt={name}

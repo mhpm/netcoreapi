@@ -29,12 +29,15 @@ export const Features = () => {
         ].map((feature, i) => (
           <div
             key={i}
-            className="group relative bg-coffee-800/60 backdrop-blur-xl p-10 rounded-[3rem] shadow-2xl border border-white/5 overflow-hidden transition-all duration-500 hover:-translate-y-2"
+            className="glass-panel group relative p-10 rounded-[3rem] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(245,158,11,0.1)]"
           >
             {/* Decorative Background Accent */}
             <div
               className={`absolute inset-0 bg-linear-to-br ${feature.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
             ></div>
+
+            {/* Glass Shine */}
+            <div className="absolute inset-0 bg-linear-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
             <div className="relative z-10 space-y-6">
               <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-brand-orange/20 group-hover:rotate-12 transition-all duration-500">
